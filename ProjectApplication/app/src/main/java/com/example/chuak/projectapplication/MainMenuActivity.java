@@ -1,9 +1,9 @@
 package com.example.chuak.projectapplication;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,19 +18,19 @@ public class MainMenuActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        /* Add in new fragment */
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction;
+
+        fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment frag = new MainMenuFragment();
+        fragmentTransaction.add(R.id.frameLayout, frag).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,11 +80,31 @@ public class MainMenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        // For fragments, pressing the back button means exiting the app
+        // How to solve this??
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_main_menu) {
+            MainMenuFragment fragment = new MainMenuFragment();
+            FragmentManager manager = getFragmentManager();
+
+            manager.beginTransaction().replace(R.id.frameLayout, fragment)
+                    .commit();
+        }
+
+        else if (id == R.id.nav_tutorial) {
+            // Handle the tutorial action
+            TutorialFragment fragment = new TutorialFragment();
+            FragmentManager manager = getFragmentManager();
+
+            manager.beginTransaction().replace(R.id.frameLayout, fragment)
+                    .commit();
+
+        } else if (id == R.id.nav_quizzes) {
+            QuizzesFragment fragment = new QuizzesFragment();
+            FragmentManager manager = getFragmentManager();
+
+            manager.beginTransaction().replace(R.id.frameLayout, fragment)
+                    .commit();
 
         } else if (id == R.id.nav_manage) {
 
