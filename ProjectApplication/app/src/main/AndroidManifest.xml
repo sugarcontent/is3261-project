@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chuak.projectapplication">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TutorialPlayerActivity"></activity>
+        <activity android:name=".TutorialPlayerActivity" />
+        <activity android:name=".Quiz1Activity" />
+        <activity android:name=".HighestScoreActivity" />
     </application>
 
 </manifest>
