@@ -22,8 +22,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".TutorialPlayerActivity" />
-        <activity android:name=".Quiz1Activity" />
-        <activity android:name=".HighestScoreActivity" />
+        <activity
+            android:name=".Quiz1Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".HighestScoreActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class Quiz1Activity extends Activity {
 
@@ -67,11 +69,16 @@ public class Quiz1Activity extends Activity {
             mQuestionNumber++;
         }
         else {
-            Toast.makeText(Quiz1Activity.this, "It was the last question!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Quiz1Activity.this, HighestScoreActivity.class);
-            intent.putExtra("score", mScore); // pass the current score to the second screen
-            startActivity(intent);
-            finish();
+            // delay the start of a new activity to display the Crouton
+            // for the last question
+            new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        Intent intent = new Intent(Quiz1Activity.this, HighestScoreActivity.class);
+                        intent.putExtra("score", mScore); // pass the current score to the second screen
+                        startActivity(intent);
+                    }
+                }, 1500);
         }
     }
 
@@ -81,17 +88,25 @@ public class Quiz1Activity extends Activity {
     }
 
     public void onClick(View view) {
+
         //all logic for all answers buttons in one method
         Button answer = (Button) view;
         // if the answer is correct, increase the score
         if (answer.getText().equals(mAnswer)){
             mScore = mScore + 1;
-            Toast.makeText(Quiz1Activity.this, "Correct!", Toast.LENGTH_SHORT).show();
-        }else
-            Toast.makeText(Quiz1Activity.this, "Wrong!", Toast.LENGTH_SHORT).show();
+            Crouton.makeText(Quiz1Activity.this, "Correct!", Style.CONFIRM).show();
+        }else {
+            Crouton.makeText(Quiz1Activity.this, "Wrong!", Style.ALERT).show();
+        }
         // show current total score for the user
         updateScore(mScore);
         // once user answer the question, we move on to the next one, if any
         updateQuestion();
+    }
+
+    @Override
+    public void onDestroy() {
+        Crouton.cancelAllCroutons();
+        super.onDestroy();
     }
 }

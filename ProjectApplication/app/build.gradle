@@ -39,6 +39,10 @@ dependencies {
     compile('com.google.apis:google-api-services-youtube:v3-rev186-1.23.0') {
         exclude group: 'org.apache.httpcomponents'
     }
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        // exclusion is not necessary, but generally a good idea.
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
     compile files('libs/YouTubeAndroidPlayerApi.jar')
     compile files('libs/google-http-client-android-1.22.0.jar')
     compile 'com.android.support:appcompat-v7:26.+'

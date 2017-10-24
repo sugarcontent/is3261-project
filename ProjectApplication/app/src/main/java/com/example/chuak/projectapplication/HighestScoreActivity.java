@@ -8,12 +8,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
+
 public class HighestScoreActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highest_score);
+
+        Crouton.makeText(this, "It was the last question!", Style.INFO).show();
 
         Button returnButton = findViewById(R.id.return_button);
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +57,11 @@ public class HighestScoreActivity extends Activity {
             editor.putInt("highscore", score);
             editor.commit();
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        Crouton.cancelAllCroutons();
+        super.onDestroy();
     }
 }
