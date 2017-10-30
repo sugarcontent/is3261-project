@@ -9,6 +9,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -38,7 +39,12 @@ dependencies {
     compile('com.google.apis:google-api-services-youtube:v3-rev186-1.23.0') {
         exclude group: 'org.apache.httpcomponents'
     }
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        // exclusion is not necessary, but generally a good idea.
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
     compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile files('libs/google-http-client-android-1.22.0.jar')
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.android.support:design:26.+'
@@ -46,5 +52,4 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.apis:google-api-services-youtube:v3-rev186-1.23.0'
     testCompile 'junit:junit:4.12'
-    compile files('libs/google-http-client-android-1.22.0.jar')
 }

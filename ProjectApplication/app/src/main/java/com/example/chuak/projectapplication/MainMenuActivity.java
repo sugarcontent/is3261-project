@@ -101,7 +101,7 @@ public class MainMenuActivity extends AppCompatActivity
                     .commit();
 
         } else if (id == R.id.nav_quizzes) {
-            QuizzesFragment fragment = new QuizzesFragment();
+            QuizMenuFragment fragment = new QuizMenuFragment();
             FragmentManager manager = getFragmentManager();
 
             manager.beginTransaction().replace(R.id.frameLayout, fragment)
