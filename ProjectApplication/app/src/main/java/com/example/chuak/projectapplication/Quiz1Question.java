@@ -1,0 +1,63 @@
+package com.example.chuak.projectapplication;
+
+import android.content.Context;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by chuak on 20/10/2017.
+ */
+
+public class Quiz1Question {
+
+    // declare list of Question objects
+    List<Question> list = new ArrayList<>();
+    MyDatabaseHelper myDatabaseHelper;
+
+    // method returns number of questions in list
+    public int getLength(){
+        return list.size();
+    }
+
+    // method returns question from list based on list index
+    public String getQuestion(int a) {
+        return list.get(a).getQuestion();
+    }
+
+    // method return a single multiple choice item for question based on list index,
+    // based on number of multiple choice item in the list - 1, 2, 3 or 4
+    // as an argument
+    public String getChoice(int index, int num) {
+        return list.get(index).getChoice(num-1);
+    }
+
+    //  method returns correct answer for the question based on list index
+    public String getCorrectAnswer(int a) {
+        return list.get(a).getAnswer();
+    }
+
+
+
+    public void initQuestions(Context context) {
+        myDatabaseHelper = new MyDatabaseHelper(context);
+        //get questions/choices/answers from database
+        list = myDatabaseHelper.getAllQuestionsList();
+
+        // add questions here
+        if (list.isEmpty()) {
+            myDatabaseHelper.addInitialQuestion(new Question("1. When did Google acquire Android ?",
+                    new String[]{"2001", "2003", "2004", "2005"}, "2005"));
+            myDatabaseHelper.addInitialQuestion(new Question("2. What is the name of build toolkit for Android Studio?",
+                    new String[]{"JVM", "Gradle", "Dalvik", "HAXM"}, "Gradle"));
+            myDatabaseHelper.addInitialQuestion(new Question("3. What widget can replace any use of radio buttons?",
+                    new String[]{"Toggle Button", "Spinner", "Switch Button", "ImageButton"}, "Spinner"));
+            myDatabaseHelper.addInitialQuestion(new Question("4. What is a widget in Android app?",
+                    new String[]{"reusable GUI element", "Layout for Activity", "device placed in cans of beer", "build toolkit"}, "reusable GUI element"));
+
+            //get list from database again
+            list = myDatabaseHelper.getAllQuestionsList();
+
+        }
+    }
+}
