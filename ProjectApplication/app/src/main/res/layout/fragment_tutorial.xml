@@ -1,24 +1,157 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/frag_tutorial"
-    tools:context="com.example.chuak.projectapplication.TutorialFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-
-
-    <Button
-        android:id="@+id/btn1"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button1" />
+        android:id="@+id/frag_tutorial"
+        android:background="@color/background"
+        tools:context="com.example.chuak.projectapplication.TutorialFragment">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="142dp"
-        android:layout_height="wrap_content"
-        android:text="Button2" />
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ImageButton
+                android:id="@+id/tutorial1"
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@drawable/tutorial1"
+                android:contentDescription="@string/tutorial1"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:text="@string/tutorial1"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:gravity="center"/>
 
-</FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="149dp"
+            android:paddingTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/tutorial2"
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@drawable/tutorial2"
+                android:contentDescription="@string/tutorial1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="@string/tutorial2"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="298dp"
+            android:paddingTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/tutorial3"
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@drawable/tutorial3"
+                android:contentDescription="@string/tutorial3" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="@string/tutorial3"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="447dp"
+            android:paddingTop="30dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/tutorial4"
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@drawable/tutorial4"
+                android:contentDescription="@string/tutorial4" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="@string/tutorial4"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="596dp"
+            android:paddingTop="45dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/tutorial5"
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:background="@drawable/tutorial5"
+                android:contentDescription="@string/tutorial5" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="149dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="@string/tutorial5"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>

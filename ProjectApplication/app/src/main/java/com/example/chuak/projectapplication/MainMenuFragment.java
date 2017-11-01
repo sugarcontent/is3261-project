@@ -20,7 +20,8 @@ public class MainMenuFragment extends Fragment {
 
     CarouselView carouselView;
 
-    int[] sampleImages = {R.drawable.placeholder_1, R.drawable.placeholder_2};
+    int[] sampleImages = {R.drawable.tutorial1, R.drawable.tutorial2,
+            R.drawable.tutorial3, R.drawable.tutorial4, R.drawable.tutorial5};
 
     public MainMenuFragment() {
         // Required empty public constructor
