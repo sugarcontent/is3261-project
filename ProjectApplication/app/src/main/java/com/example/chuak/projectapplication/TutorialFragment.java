@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 
 /**
@@ -27,24 +27,52 @@ public class TutorialFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tutorial, container, false);
         // Inflate the layout for this fragment
 
-        Button btn1 = (Button) view.findViewById(R.id.btn1);
+        ImageButton btn1 = view.findViewById(R.id.tutorial1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onFragmentInteraction("button is clicked !!!");
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey1));
             }
         });
 
-        Button btn2 = (Button) view.findViewById(R.id.button2);
+        ImageButton btn2 = view.findViewById(R.id.tutorial2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("clicksed");
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey2));
+            }
+        });
+
+        ImageButton btn3 = view.findViewById(R.id.tutorial3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey3));
+            }
+        });
+
+        ImageButton btn4 = view.findViewById(R.id.tutorial4);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey4));
+            }
+        });
+
+        ImageButton btn5 = view.findViewById(R.id.tutorial5);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey5));
             }
         });
 
         return view;
-
     }
 
     @Override
@@ -75,8 +103,7 @@ public class TutorialFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(String str);
+        void onFragmentInteraction(String youtubeID);
     }
 
 }

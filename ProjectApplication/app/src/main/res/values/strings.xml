@@ -34,4 +34,12 @@
     <string name="highest_score">Highest Score:</string>
     <string name="try_again">Try Again</string>
     <string name="return_button">Return to Main Menu</string>
+
+    /* Tutorial Descriptions */
+    <string name="tutorial1">Introduction to Android Studio: Learning how to create an empty app</string>
+    <string name="tutorial2">Intent and Activity: Interaction within an Android app</string>
+    <string name="tutorial3">Build your very first calculator app from scratch using Android Studio!</string>
+    <string name="tutorial4">Creating Database and Tables using SQLite in Android Studio</string>
+    <string name="tutorial5">Using Google Maps API in Android</string>
+
 </resources>

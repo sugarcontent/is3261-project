@@ -11,8 +11,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
     public static final String API_KEY = "AIzaSyBx7v0YOb140fDO7EbfMx4l87raxezDWFw";
 
-    //https://www.youtube.com/watch?v=<VIDEO_ID>
-    public static final String VIDEO_ID = "-m3V8w_7vhk";
+    public String VIDEO_ID = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +19,12 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
         // attaching layout xml
         setContentView(R.layout.activity_tutorial_player);
 
+        //https://www.youtube.com/watch?v=<VIDEO_ID>
+        String video_id = getIntent().getStringExtra("key");
+        setVideoId(video_id);
+
         // Initializing YouTube player view
-        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
+        YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
         youTubePlayerView.initialize(API_KEY, this);
 
     }
@@ -37,9 +40,17 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
 
         // Start buffering
         if (!wasRestored) {
-            player.cueVideo(VIDEO_ID);
+            player.cueVideo(getVideoId());
         }
 
+    }
+
+    public void setVideoId(String id) {
+        this.VIDEO_ID = id;
+    }
+
+    public String getVideoId() {
+        return this.VIDEO_ID;
     }
 
 }
