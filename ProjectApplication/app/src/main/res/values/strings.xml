@@ -17,7 +17,10 @@
 
     /* Quiz Fragment */
     <string name="select_quiz">Select a Quiz!</string>
-    <string name="quiz1">Android Quiz</string>
+    <string name="quiz1">Basic Android Quiz</string>
+    <string name="quiz2">Intent Quiz</string>
+    <string name="quiz3">Calculator Quiz</string>
+    <string name="quiz4">SQLite Quiz</string>
 
     /* Quiz Activity*/
     <string name="question_to_answer">Question to answer:</string>
@@ -41,5 +44,8 @@
     <string name="tutorial3">Build your very first calculator app from scratch using Android Studio!</string>
     <string name="tutorial4">Creating Database and Tables using SQLite in Android Studio</string>
     <string name="tutorial5">Using Google Maps API in Android</string>
+
+    /* Tutorial Video Activity */
+    <string name="footnotes">Footnotes</string>
 
 </resources>

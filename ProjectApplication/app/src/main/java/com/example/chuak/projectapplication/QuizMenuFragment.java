@@ -31,15 +31,39 @@ public class QuizMenuFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_quizzes, container, false);
 
-        option1 = (Button) view.findViewById(R.id.option1);
-        option2 = (Button) view.findViewById(R.id.option2);
-        option3 = (Button) view.findViewById(R.id.option3);
-        option4 = (Button) view.findViewById(R.id.option4);
+        option1 = view.findViewById(R.id.option1);
+        option2 = view.findViewById(R.id.option2);
+        option3 = view.findViewById(R.id.option3);
+        option4 = view.findViewById(R.id.option4);
 
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), Quiz1Activity.class);
+                startActivity(i);
+            }
+        });
+
+        option2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), Quiz2Activity.class);
+                startActivity(i);
+            }
+        });
+
+        option3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), Quiz3Activity.class);
+                startActivity(i);
+            }
+        });
+
+        option4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), Quiz4Activity.class);
                 startActivity(i);
             }
         });

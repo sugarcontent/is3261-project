@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_quiz"
+    android:id="@+id/activity_quiz3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,10 +10,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/quizBackground"
-    tools:context="com.example.chuak.projectapplication.Quiz1Activity">
+    tools:context="com.example.chuak.projectapplication.Quiz2Activity">
 
     <TextView
-        android:id="@+id/question"
+        android:id="@+id/question3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -24,7 +24,7 @@
 
 
     <Button
-        android:id="@+id/choice1"
+        android:id="@+id/choice31"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -35,7 +35,7 @@
         android:textColor="#000000" />
 
     <Button
-        android:id="@+id/choice2"
+        android:id="@+id/choice32"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -46,7 +46,7 @@
         android:textColor="#000000" />
 
     <Button
-        android:id="@+id/choice3"
+        android:id="@+id/choice33"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -57,7 +57,7 @@
         android:textColor="#000000" />
 
     <Button
-        android:id="@+id/choice4"
+        android:id="@+id/choice34"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -68,7 +68,7 @@
         android:textColor="#000000" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar3"
         android:layout_marginBottom="20dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
         android:padding="1dp">
 
         <TextView
-            android:id="@+id/score_text"
+            android:id="@+id/score_text3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_orange_light"
@@ -90,7 +90,7 @@
             android:textAppearance="@android:style/TextAppearance.Holo.Medium" />
 
         <TextView
-            android:id="@+id/score"
+            android:id="@+id/score3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_orange_light"
@@ -101,7 +101,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/quit_button"
+        android:id="@+id/quit_button3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -111,4 +111,3 @@
         android:textColor="@color/colorTitle" />
 
 </LinearLayout>
-

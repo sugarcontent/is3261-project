@@ -36,7 +36,7 @@
         android:id="@+id/option2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/quiz2"
         android:background="#0091EA"
         android:layout_marginBottom="20sp"
         android:textColor="#fff" />
@@ -48,13 +48,13 @@
         android:background="#0091EA"
         android:textColor="#fff"
         android:layout_marginBottom="20sp"
-        android:text="Button" />
+        android:text="@string/quiz3" />
 
     <Button
         android:id="@+id/option4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/quiz4"
         android:background="#0091EA"
         android:textColor="#fff" />
 

@@ -4,12 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.example.chuak.projectapplication.TutorialPlayerActivity">
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/youtube_player_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ebeff2" />
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:id="@+id/footnotes_text"
+        android:text="@string/footnotes"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/footnotes"
+        android:layout_alignStart="@+id/footnotes" />
+
+    <EditText
+        android:id="@+id/footnotes"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:gravity="top"
+        android:background="@drawable/edittext_shadow"
+        android:inputType="textMultiLine"
+        android:maxLines="20"
+        android:elevation="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="145dp" />
 
 </RelativeLayout>
