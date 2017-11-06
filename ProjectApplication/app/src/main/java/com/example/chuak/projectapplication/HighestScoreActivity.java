@@ -20,6 +20,12 @@ public class HighestScoreActivity extends Activity {
 
         Crouton.makeText(this, "It was the last question!", Style.INFO).show();
 
+        // receive the score from last activity by Intent
+        Intent intent = getIntent();
+        int score = intent.getIntExtra("score", 0);
+        int numQuestions = intent.getIntExtra("questions", 0);
+        final int currentActivity = intent.getIntExtra("activity", 1);
+
         Button returnButton = findViewById(R.id.return_button);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,16 +39,38 @@ public class HighestScoreActivity extends Activity {
         retryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), Quiz1Activity.class);
-                startActivity(i);
+                switch (currentActivity) {
+                    case 1:
+                        Intent intent1 = new Intent(view.getContext(), Quiz1Activity.class);
+                        startActivity(intent1);
+                        break;
+
+                    case 2:
+                        Intent intent2 = new Intent(view.getContext(), Quiz2Activity.class);
+                        startActivity(intent2);
+                        break;
+
+                    case 3:
+                        Intent intent3 = new Intent(view.getContext(), Quiz3Activity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case 4:
+                        Intent intent4 = new Intent(view.getContext(), Quiz4Activity.class);
+                        startActivity(intent4);
+                        break;
+
+                    default:
+                        Intent intentDef = new Intent(view.getContext(), Quiz1Activity.class);
+                        startActivity(intentDef);
+                        break;
+                }
             }
         });
 
         TextView txtScore = findViewById(R.id.textScore);
         TextView txtHighScore = findViewById(R.id.textHighScore);
-        // receive the score from last activity by Intent
-        Intent intent = getIntent();
-        int score = intent.getIntExtra("score", 0);
+
         // display current score
         txtScore.setText("Your score: " + score);
 

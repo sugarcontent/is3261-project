@@ -11,9 +11,9 @@ import android.widget.TextView;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class Quiz1Activity extends Activity {
+public class Quiz3Activity extends Activity {
 
-    private Quiz1Question mQuestionLibrary = new Quiz1Question();
+    private Quiz3Question mQuestionLibrary = new Quiz3Question();
 
     private TextView mScoreView;   // view for current total score
     private TextView mQuestionView;  //current question to answer
@@ -28,22 +28,22 @@ public class Quiz1Activity extends Activity {
     private int mScore = 0;  // current total score
     private int mQuestionNumber = 0; // current question number
 
-    private int maxNumOfQuestions = 5;
+    private int maxNumOfQuestions = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz1);
+        setContentView(R.layout.activity_quiz3);
 
         // setup screen for the first question with four alternative to answer
-        mScoreView = findViewById(R.id.score);
-        mQuestionView = findViewById(R.id.question);
-        mButtonChoice1 = findViewById(R.id.choice1);
-        mButtonChoice2 = findViewById(R.id.choice2);
-        mButtonChoice3 = findViewById(R.id.choice3);
-        mButtonChoice4 = findViewById(R.id.choice4);
+        mScoreView = findViewById(R.id.score3);
+        mQuestionView = findViewById(R.id.question3);
+        mButtonChoice1 = findViewById(R.id.choice31);
+        mButtonChoice2 = findViewById(R.id.choice32);
+        mButtonChoice3 = findViewById(R.id.choice33);
+        mButtonChoice4 = findViewById(R.id.choice34);
 
-        quitButton = findViewById(R.id.quit_button);
+        quitButton = findViewById(R.id.quit_button3);
 
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class Quiz1Activity extends Activity {
             }
         });
 
-        pbar = findViewById(R.id.progressBar);
+        pbar = findViewById(R.id.progressBar3);
 
         pbar.setMax(maxNumOfQuestions);
         pbar.setProgress(mQuestionNumber + 1);
@@ -69,7 +69,7 @@ public class Quiz1Activity extends Activity {
         // check if we are not outside array bounds for questions
         if(mQuestionNumber < mQuestionLibrary.getLength() ){
 
-            pbar = findViewById(R.id.progressBar);
+            pbar = findViewById(R.id.progressBar3);
             pbar.setProgress(mQuestionNumber + 1);
             // set the text for new question,
             // and new 4 alternative to answer on four buttons
@@ -85,16 +85,16 @@ public class Quiz1Activity extends Activity {
             // delay the start of a new activity to display the Crouton
             // for the last question
             new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        mQuestionLibrary.clearQuestion();
-                        Intent intent = new Intent(Quiz1Activity.this, HighestScoreActivity.class);
-                        intent.putExtra("activity", 1);
-                        intent.putExtra("questions", maxNumOfQuestions);
-                        intent.putExtra("score", mScore); // pass the current score to the second screen
-                        startActivity(intent);
-                    }
-                }, 1500);
+                    new Runnable() {
+                        public void run() {
+                            mQuestionLibrary.clearQuestion();
+                            Intent intent = new Intent(Quiz3Activity.this, HighestScoreActivity.class);
+                            intent.putExtra("activity", 3);
+                            intent.putExtra("questions", maxNumOfQuestions);
+                            intent.putExtra("score", mScore); // pass the current score to the second screen
+                            startActivity(intent);
+                        }
+                    }, 1500);
         }
     }
 
@@ -110,9 +110,9 @@ public class Quiz1Activity extends Activity {
         // if the answer is correct, increase the score
         if (answer.getText().equals(mAnswer)){
             mScore = mScore + 1;
-            Crouton.makeText(Quiz1Activity.this, "Correct!", Style.CONFIRM).show();
+            Crouton.makeText(Quiz3Activity.this, "Correct!", Style.CONFIRM).show();
         }else {
-            Crouton.makeText(Quiz1Activity.this, "Wrong!", Style.ALERT).show();
+            Crouton.makeText(Quiz3Activity.this, "Wrong!", Style.ALERT).show();
         }
         // show current total score for the user
         updateScore(mScore);

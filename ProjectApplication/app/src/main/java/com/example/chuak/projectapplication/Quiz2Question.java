@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chuak on 20/10/2017.
+ * Created by chuak on 3/11/2017.
  */
 
-public class Quiz1Question {
-
+public class Quiz2Question {
     // declare list of Question objects
     List<Question> list = new ArrayList<>();
     MyDatabaseHelper myDatabaseHelper;
@@ -37,8 +36,6 @@ public class Quiz1Question {
         return list.get(a).getAnswer();
     }
 
-
-
     public void initQuestions(Context context) {
         myDatabaseHelper = new MyDatabaseHelper(context);
         //get questions/choices/answers from database
@@ -46,20 +43,14 @@ public class Quiz1Question {
 
         // add questions here
         if (list.isEmpty()) {
-            myDatabaseHelper.addInitialQuestion(new Question("1. Where are the images for app icons located?",
-                    new String[]{"Layout folder", "Mipmap folder", "Drawable folder", "Values folder"}, "Mipmap folder"));
-            myDatabaseHelper.addInitialQuestion(new Question("2. What is the name of build toolkit for Android Studio?",
-                    new String[]{"JVM", "Gradle", "Dalvik", "HAXM"}, "Gradle"));
-            myDatabaseHelper.addInitialQuestion(new Question("3. How do you align text in TextView to be in the center?",
-                    new String[]{"gravity:center", "position:center", "text:center", "moveText:center"}, "gravity:center"));
-            myDatabaseHelper.addInitialQuestion(new Question("4. What is a widget in Android app?",
-                    new String[]{"reusable GUI element", "Layout for Activity", "device placed in cans of beer", "build toolkit"}, "reusable GUI element"));
-            myDatabaseHelper.addInitialQuestion(new Question("5. What format are layout files in?",
-                    new String[]{"Java", "HTML", "CSS", "XML"}, "XML"));
-
+            myDatabaseHelper.addInitialQuestion(new Question("1. What is the purpose of setOnClickListener?",
+                    new String[]{"No inherent purpose", "Makes the button clickable", "Calls a function after clicking button", "Listen for clicks"}, "Calls a function after clicking button"));
+            myDatabaseHelper.addInitialQuestion(new Question("2. What is the first parameter in the Intent constructor?",
+                    new String[]{"Activity class", "Context", "String", "Integer"}, "Context"));
+            myDatabaseHelper.addInitialQuestion(new Question("3. What do you use Intent for?",
+                    new String[]{"Transition from one activity to another", "State your intention", "Create a new layout", "Adding a widget"}, "Transition from one activity to another"));
             //get list from database again
             list = myDatabaseHelper.getAllQuestionsList();
-
         }
     }
 
