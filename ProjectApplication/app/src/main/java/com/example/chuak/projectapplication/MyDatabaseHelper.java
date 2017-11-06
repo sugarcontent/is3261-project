@@ -60,6 +60,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void dropTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_QUESTION);
+    }
+
     /**
      * This method is used to add question detail in question Table
      */
@@ -77,8 +82,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         long insert = db.insert(TABLE_QUESTION, null, values);
         return insert;
     }
-
-
 
     /**
      * To extract data from database and save it Arraylist of data type

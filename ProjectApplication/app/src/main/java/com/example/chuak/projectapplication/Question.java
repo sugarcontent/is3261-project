@@ -5,7 +5,7 @@ package com.example.chuak.projectapplication;
  */
 
 public class Question {
-    private String question;
+    private String qn;
     private String[] choice = new String[4];
     private String answer;
 
@@ -13,7 +13,7 @@ public class Question {
 
     }
     public Question(String question, String[] choices, String answer) {
-        this.question = question;
+        this.qn = question;
         this.choice[0] = choices[0];
         this.choice[1] = choices[1];
         this.choice[2] = choices[2];
@@ -22,7 +22,7 @@ public class Question {
     }
 
     public String getQuestion() {
-        return question;
+        return qn;
     }
 
     public String getChoice(int i) {
@@ -42,7 +42,7 @@ public class Question {
     }
 
     public void setQuestion(String question) {
-        this.question = question;
+        this.qn = question;
     }
 
 }

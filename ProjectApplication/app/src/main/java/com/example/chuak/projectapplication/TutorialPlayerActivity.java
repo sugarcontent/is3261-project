@@ -9,7 +9,6 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
-    public static final String API_KEY = "AIzaSyBx7v0YOb140fDO7EbfMx4l87raxezDWFw";
 
     public String VIDEO_ID = null;
 
@@ -18,6 +17,8 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
         super.onCreate(savedInstanceState);
         // attaching layout xml
         setContentView(R.layout.activity_tutorial_player);
+
+        String API_KEY = this.getResources().getString(R.string.api_key);
 
         //https://www.youtube.com/watch?v=<VIDEO_ID>
         String video_id = getIntent().getStringExtra("key");
@@ -37,12 +38,10 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
         if (null == player) return;
-
         // Start buffering
         if (!wasRestored) {
             player.cueVideo(getVideoId());
         }
-
     }
 
     public void setVideoId(String id) {
