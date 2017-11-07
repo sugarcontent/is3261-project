@@ -99,8 +99,9 @@ public class MainMenuActivity extends AppCompatActivity
         return true;
     }
 
-    public void onFragmentInteraction(String youtubeID) {
+    public void onFragmentInteraction(String youtubeID, int videoNum) {
         Intent i = new Intent(this, TutorialPlayerActivity.class);
+        i.putExtra("videoNum", videoNum);
         i.putExtra("key", youtubeID);
         startActivity(i);
     }

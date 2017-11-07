@@ -32,7 +32,7 @@ public class TutorialFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()
-                        .getString(R.string.tutorialkey1));
+                        .getString(R.string.tutorialkey1), 1);
             }
         });
 
@@ -41,7 +41,7 @@ public class TutorialFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()
-                        .getString(R.string.tutorialkey2));
+                        .getString(R.string.tutorialkey2), 2);
             }
         });
 
@@ -50,7 +50,7 @@ public class TutorialFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()
-                        .getString(R.string.tutorialkey3));
+                        .getString(R.string.tutorialkey3), 3);
             }
         });
 
@@ -59,7 +59,7 @@ public class TutorialFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()
-                        .getString(R.string.tutorialkey4));
+                        .getString(R.string.tutorialkey4), 4);
             }
         });
 
@@ -68,7 +68,7 @@ public class TutorialFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()
-                        .getString(R.string.tutorialkey5));
+                        .getString(R.string.tutorialkey5), 5);
             }
         });
 
@@ -103,7 +103,7 @@ public class TutorialFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(String youtubeID);
+        void onFragmentInteraction(String youtubeID, int videoNum);
     }
 
 }
