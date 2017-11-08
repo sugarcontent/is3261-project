@@ -55,6 +55,6 @@ public class Quiz2Question {
     }
 
     public void clearQuestion() {
-        myDatabaseHelper.dropTable();
+        myDatabaseHelper.clearTable();
     }
 }

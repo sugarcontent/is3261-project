@@ -48,5 +48,6 @@
 
     /* Tutorial Video Activity */
     <string name="footnotes">Footnotes</string>
+    <string name="save">Save</string>
 
 </resources>
