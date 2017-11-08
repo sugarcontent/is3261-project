@@ -25,6 +25,7 @@ public class HighestScoreActivity extends Activity {
         int score = intent.getIntExtra("score", 0);
         int numQuestions = intent.getIntExtra("questions", 0);
         final int currentActivity = intent.getIntExtra("activity", 1);
+        String activity = "activity" + currentActivity;
 
         Button returnButton = findViewById(R.id.return_button);
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -75,14 +76,15 @@ public class HighestScoreActivity extends Activity {
         txtScore.setText("Your score: " + score);
 
         // use Shared preferences to save the best score
+
         SharedPreferences mypref = getPreferences(MODE_PRIVATE);
-        int highscore = mypref.getInt("highscore",0);
-        if(highscore>= score)
+        int highscore = mypref.getInt(activity,0);
+        if(highscore >= score)
             txtHighScore.setText("High score: "+highscore);
         else {
             txtHighScore.setText("New highscore: "+score);
             SharedPreferences.Editor editor = mypref.edit();
-            editor.putInt("highscore", score);
+            editor.putInt(activity, score);
             editor.commit();
         }
     }
