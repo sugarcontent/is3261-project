@@ -51,5 +51,6 @@ dependencies {
     compile 'com.synnapps:carouselview:0.1.4'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.apis:google-api-services-youtube:v3-rev186-1.23.0'
+    compile 'com.google.code.gson:gson:2.8.1'
     testCompile 'junit:junit:4.12'
 }

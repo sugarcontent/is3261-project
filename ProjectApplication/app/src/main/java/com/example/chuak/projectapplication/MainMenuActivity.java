@@ -92,6 +92,13 @@ public class MainMenuActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.frameLayout, fragment)
                     .commit();
 
+        } else if (id == R.id.nav_notes) {
+            NotesFragment fragment = new NotesFragment();
+            FragmentManager manager = getFragmentManager();
+
+            manager.beginTransaction().replace(R.id.frameLayout, fragment)
+                    .commit();
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

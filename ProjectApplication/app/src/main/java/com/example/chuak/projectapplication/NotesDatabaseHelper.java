@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by chuak on 7/11/2017.
  */
@@ -68,6 +70,29 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
     public void clearTable() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NOTES);
+    }
+
+    public ArrayList<String> getAllTutNotes(String tutId) {
+        ArrayList<String> notesArrayList = new ArrayList<>();
+        String selectQuery = "SELECT  * FROM " + TABLE_NOTES + " WHERE " + VIDEO_NUM+ " = " + tutId;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        // looping through all records and adding to the list
+        if (c.moveToFirst()) {
+            do {
+                String str = new String();
+
+                String notesText= c.getString(c.getColumnIndex(VIDEO_DESC));
+
+                // adding to Notes list
+                notesArrayList.add(notesText);
+
+
+            } while (c.moveToNext());
+        }
+        return notesArrayList;
     }
 
     // Function to get all entries of the particular video number

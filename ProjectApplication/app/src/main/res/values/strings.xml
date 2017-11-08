@@ -15,6 +15,7 @@
     <string name="nav_main_menu">Main Menu</string>
     <string name="nav_tutorials">Tutorials</string>
     <string name="nav_quizzes">Quiz</string>
+    <string name="nav_notes">Note</string>
 
     /* Quiz Fragment */
     <string name="select_quiz">Select a Quiz!</string>
@@ -49,5 +50,12 @@
     /* Tutorial Video Activity */
     <string name="footnotes">Footnotes</string>
     <string name="save">Save</string>
+
+    /* Notes Fragment Buttons */
+    <string name="btn_note1">View Tutorial 1 Notes</string>
+    <string name="btn_note2">View Tutorial 2 Notes</string>
+    <string name="btn_note3">View Tutorial 3 Notes</string>
+    <string name="btn_note4">View Tutorial 4 Notes</string>
+    <string name="btn_note5">View Tutorial 5 Notes</string>
 
 </resources>
