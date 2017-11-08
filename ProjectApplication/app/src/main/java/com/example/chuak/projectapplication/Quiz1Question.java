@@ -64,6 +64,6 @@ public class Quiz1Question {
     }
 
     public void clearQuestion() {
-        myDatabaseHelper.dropTable();
+        myDatabaseHelper.clearTable();
     }
 }

@@ -2,8 +2,10 @@ package com.example.chuak.projectapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 /**
  * Created by chuak on 7/11/2017.
@@ -50,6 +52,22 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NOTES, null, values);
 
         db.close();
+    }
+    
+    public void toastEntries(Context ctx) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + TABLE_NOTES, null);
+        c.moveToFirst();
+        do {
+            Toast.makeText(ctx, c.getString(c.getColumnIndex(VIDEO_DESC)), Toast.LENGTH_SHORT).show();
+        } while (c.moveToNext());
+
+        c.close();
+    }
+
+    public void clearTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NOTES);
     }
 
     // Function to get all entries of the particular video number

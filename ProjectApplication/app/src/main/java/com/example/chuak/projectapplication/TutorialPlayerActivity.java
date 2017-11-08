@@ -42,6 +42,7 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
                 EditText footnotes = findViewById(R.id.footnotes);
                 String description = footnotes.getText().toString();
                 notes.insertEntry(description, videoNum);
+               // notes.toastEntries(getApplicationContext());
             }
         });
     }
