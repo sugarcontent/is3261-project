@@ -82,6 +82,10 @@ public class Quiz3Activity extends Activity {
             mQuestionNumber++;
         }
         else {
+            mButtonChoice1.setEnabled(false);
+            mButtonChoice2.setEnabled(false);
+            mButtonChoice3.setEnabled(false);
+            mButtonChoice4.setEnabled(false);
             // delay the start of a new activity to display the Crouton
             // for the last question
             new android.os.Handler().postDelayed(
