@@ -16,7 +16,7 @@
             android:title="@string/nav_quizzes" />
         <item
             android:id="@+id/nav_notes"
-            android:icon="@drawable/icons8_quiz_filled"
+            android:icon="@drawable/icons8_edit_property"
             android:title="@string/nav_notes" />
     </group>
 

@@ -11,6 +11,9 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
+
 public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     public String VIDEO_ID = null;
@@ -41,8 +44,15 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
             public void onClick(View view) {
                 EditText footnotes = findViewById(R.id.footnotes);
                 String description = footnotes.getText().toString();
-                notes.insertEntry(description, videoNum);
-               // notes.toastEntries(getApplicationContext());
+                long success = notes.insertEntry(description, videoNum);
+                if (success == -1) {
+                    Crouton.makeText(TutorialPlayerActivity.this, "Notes saved successfully!",
+                            Style.ALERT).show();
+                } else {
+                    footnotes.setText("");
+                    Crouton.makeText(TutorialPlayerActivity.this, "Notes saved successfully!",
+                            Style.CONFIRM).show();
+                }
             }
         });
     }
@@ -71,6 +81,12 @@ public class TutorialPlayerActivity extends YouTubeBaseActivity implements YouTu
 
     public String getVideoId() {
         return this.VIDEO_ID;
+    }
+
+    @Override
+    public void onDestroy() {
+        Crouton.cancelAllCroutons();
+        super.onDestroy();
     }
 
 }
