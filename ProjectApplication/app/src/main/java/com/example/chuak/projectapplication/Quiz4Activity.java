@@ -81,6 +81,10 @@ public class Quiz4Activity extends Activity {
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
         } else {
+            mButtonChoice1.setEnabled(false);
+            mButtonChoice2.setEnabled(false);
+            mButtonChoice3.setEnabled(false);
+            mButtonChoice4.setEnabled(false);
             // delay the start of a new activity to display the Crouton
             // for the last question
             new android.os.Handler().postDelayed(
@@ -113,6 +117,7 @@ public class Quiz4Activity extends Activity {
         } else {
             Crouton.makeText(Quiz4Activity.this, "Wrong!", Style.ALERT).show();
         }
+
         // show current total score for the user
         updateScore(mScore);
         // once user answer the question, we move on to the next one, if any
