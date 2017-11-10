@@ -13,6 +13,6 @@ var C = A * B;
     window.webConnector.onData("123");
     }
 
-    function changeColor(){
-
+    function exitActivity(){
+       window.webConnector.exitActivity();
     }

@@ -29,6 +29,7 @@ public class NotesViewingActivity extends Activity {
 
 
 
+
         webView = findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         // beware of XSS vulnerabilities
@@ -57,8 +58,8 @@ public class NotesViewingActivity extends Activity {
     }
 
     @JavascriptInterface
-    public void onData(String value) {
-
+    public void exitActivity() {
+        finish();
     }
 
     public void getAllNotes(Context context, String tutId) {

@@ -4,15 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.chuak.projectapplication.NotesViewingActivity">
+    tools:context="com.example.chuak.projectapplication.SplashScreen">
 
-
-    <WebView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
-        android:id="@+id/webView">
-    </WebView>
+        android:layout_height="match_parent"
+        android:src="@drawable/verticallogotest"/>
 
 </LinearLayout>
