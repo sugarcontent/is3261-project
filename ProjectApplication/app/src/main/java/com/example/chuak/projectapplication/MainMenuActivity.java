@@ -66,9 +66,6 @@ public class MainMenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        // For fragments, pressing the back button means exiting the app
-        // How to solve this??
-
         if (id == R.id.nav_main_menu) {
             MainMenuFragment fragment = new MainMenuFragment();
             FragmentManager manager = getFragmentManager();
