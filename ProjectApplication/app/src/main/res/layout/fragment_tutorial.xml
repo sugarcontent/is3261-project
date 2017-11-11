@@ -24,7 +24,7 @@
                 android:layout_weight="0.5"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:background="@drawable/Slide1"
+                android:background="@drawable/slide1"
                 android:contentDescription="@string/tutorial1"
                 />
             <TextView
@@ -53,7 +53,7 @@
                 android:layout_weight="0.5"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:background="@drawable/Slide2"
+                android:background="@drawable/slide2"
                 android:contentDescription="@string/tutorial1" />
 
             <TextView
@@ -82,7 +82,7 @@
                 android:layout_weight="0.5"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:background="@drawable/Slide3"
+                android:background="@drawable/slide3"
                 android:contentDescription="@string/tutorial3" />
 
             <TextView
@@ -111,7 +111,7 @@
                 android:layout_weight="0.5"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:background="@drawable/Slide4"
+                android:background="@drawable/slide4"
                 android:contentDescription="@string/tutorial4" />
 
             <TextView
@@ -140,7 +140,7 @@
                 android:layout_weight="0.5"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:background="@drawable/Slide5"
+                android:background="@drawable/slide5"
                 android:contentDescription="@string/tutorial5" />
 
             <TextView
