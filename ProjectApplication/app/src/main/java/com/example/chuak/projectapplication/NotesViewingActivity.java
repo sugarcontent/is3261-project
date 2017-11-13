@@ -68,4 +68,7 @@ public class NotesViewingActivity extends Activity {
         notesList = notesDatabaseHelper.getAllTutNotes(tutId);
 
     }
+
 }
+
+
