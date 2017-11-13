@@ -53,10 +53,10 @@
 
     /* Notes Fragment Buttons */
     <string name="view_notes">View your Tutorial Notes here!</string>
-    <string name="btn_note1">View Tutorial 1 Notes</string>
-    <string name="btn_note2">View Tutorial 2 Notes</string>
-    <string name="btn_note3">View Tutorial 3 Notes</string>
-    <string name="btn_note4">View Tutorial 4 Notes</string>
-    <string name="btn_note5">View Tutorial 5 Notes</string>
+    <string name="btn_note1"> Android 101 </string>
+    <string name="btn_note2"> Intent and Activity </string>
+    <string name="btn_note3"> Grid Design </string>
+    <string name="btn_note4"> Database (SQLite) </string>
+    <string name="btn_note5"> Maps API               </string>
 
 </resources>
