@@ -2,6 +2,7 @@
 <html>
 <script>
         function test(data) {
+        if(data.length > 0){
             var str = "<div id='list2'><ol>";
 
             for(var i in data){
@@ -9,6 +10,7 @@
             }
             str += "</ol></div>";
             document.getElementById("outputText").innerHTML = str;
+            }
      }
     </script>
 
@@ -29,9 +31,10 @@
     " onclick="exitActivity()">
 
 <div id="outputText">
-
-
+    <p style="font-family:Arial; font-size:22px; color:white;">No notes added for this tutorial</p>
 </div>
+
+
 
 
 

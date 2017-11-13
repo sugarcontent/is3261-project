@@ -16,3 +16,8 @@ var C = A * B;
     function exitActivity(){
        window.webConnector.exitActivity();
     }
+
+    function saveNote(){
+           window.webConnector.saveNoteToFile();
+        }
+

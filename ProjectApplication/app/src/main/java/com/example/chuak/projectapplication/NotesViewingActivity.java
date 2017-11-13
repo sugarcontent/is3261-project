@@ -7,15 +7,20 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+
 
 public class NotesViewingActivity extends Activity {
     WebView webView;
     NotesDatabaseHelper notesDatabaseHelper;
     ArrayList <String> notesList = new ArrayList<String>();
+    String filename = "notes";
 
 
     @Override
@@ -67,5 +72,22 @@ public class NotesViewingActivity extends Activity {
         notesDatabaseHelper = new NotesDatabaseHelper(context);
         notesList = notesDatabaseHelper.getAllTutNotes(tutId);
 
+    }
+
+    @JavascriptInterface
+    public void saveNoteToFile() {
+        ArrayList<String> notes = this.notesList;
+        try {
+            FileOutputStream fos = openFileOutput(filename, Context.MODE_PRIVATE);
+            for (int i=0; i < notes.size(); i++) {
+                String line = notes.get(i) + "\n\n";
+                fos.write(line.getBytes());
+            }
+            fos.close();
+            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, this.getFilesDir().getAbsolutePath(), Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
