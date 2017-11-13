@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 /**
@@ -35,9 +36,26 @@ public class TutorialFragment extends Fragment {
                         .getString(R.string.tutorialkey1), 1);
             }
         });
+        TextView text1 = view.findViewById(R.id.text_tutorial1);
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey1), 1);
+            }
+        });
 
         ImageButton btn2 = view.findViewById(R.id.tutorial2);
         btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey2), 2);
+            }
+        });
+
+        TextView text2 = view.findViewById(R.id.text_tutorial2);
+        text2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()
@@ -54,6 +72,15 @@ public class TutorialFragment extends Fragment {
             }
         });
 
+        TextView text3 = view.findViewById(R.id.text_tutorial3);
+        text3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey3), 3);
+            }
+        });
+
         ImageButton btn4 = view.findViewById(R.id.tutorial4);
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +90,26 @@ public class TutorialFragment extends Fragment {
             }
         });
 
+        TextView text4 = view.findViewById(R.id.text_tutorial4);
+        text4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey4), 4);
+            }
+        });
+
         ImageButton btn5 = view.findViewById(R.id.tutorial5);
         btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(view.getResources()
+                        .getString(R.string.tutorialkey5), 5);
+            }
+        });
+
+        TextView text5 = view.findViewById(R.id.text_tutorial5);
+        text5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mListener.onFragmentInteraction(view.getResources()

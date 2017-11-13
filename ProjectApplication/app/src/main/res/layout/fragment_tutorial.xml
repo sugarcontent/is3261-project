@@ -28,6 +28,7 @@
                 android:contentDescription="@string/tutorial1"
                 />
             <TextView
+                android:id="@+id/text_tutorial1"
                 android:layout_width="0dp"
                 android:layout_height="149dp"
                 android:layout_weight="0.5"
@@ -57,6 +58,7 @@
                 android:contentDescription="@string/tutorial1" />
 
             <TextView
+                android:id="@+id/text_tutorial2"
                 android:layout_width="0dp"
                 android:layout_height="149dp"
                 android:layout_weight="0.5"
@@ -86,6 +88,7 @@
                 android:contentDescription="@string/tutorial3" />
 
             <TextView
+                android:id="@+id/text_tutorial3"
                 android:layout_width="0dp"
                 android:layout_height="149dp"
                 android:layout_weight="0.5"
@@ -115,6 +118,7 @@
                 android:contentDescription="@string/tutorial4" />
 
             <TextView
+                android:id="@+id/text_tutorial4"
                 android:layout_width="0dp"
                 android:layout_height="149dp"
                 android:layout_weight="0.5"
@@ -144,6 +148,7 @@
                 android:contentDescription="@string/tutorial5" />
 
             <TextView
+                android:id="@+id/text_tutorial5"
                 android:layout_width="0dp"
                 android:layout_height="149dp"
                 android:layout_weight="0.5"
