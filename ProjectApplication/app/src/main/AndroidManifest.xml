@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chuak.projectapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/android_learner"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/android_learner"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
