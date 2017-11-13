@@ -16,4 +16,3 @@ var C = A * B;
     function exitActivity(){
        window.webConnector.exitActivity();
     }
-
