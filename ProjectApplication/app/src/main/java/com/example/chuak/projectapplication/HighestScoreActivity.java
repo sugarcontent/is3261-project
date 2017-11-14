@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class HighestScoreActivity extends Activity {
 
@@ -17,8 +16,6 @@ public class HighestScoreActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highest_score);
-
-        Crouton.makeText(this, "It was the last question!", Style.INFO).show();
 
         // receive the score from last activity by Intent
         Intent intent = getIntent();
@@ -33,6 +30,7 @@ public class HighestScoreActivity extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), MainMenuActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -44,26 +42,31 @@ public class HighestScoreActivity extends Activity {
                     case 1:
                         Intent intent1 = new Intent(view.getContext(), Quiz1Activity.class);
                         startActivity(intent1);
+                        finish();
                         break;
 
                     case 2:
                         Intent intent2 = new Intent(view.getContext(), Quiz2Activity.class);
                         startActivity(intent2);
+                        finish();
                         break;
 
                     case 3:
                         Intent intent3 = new Intent(view.getContext(), Quiz3Activity.class);
                         startActivity(intent3);
+                        finish();
                         break;
 
                     case 4:
                         Intent intent4 = new Intent(view.getContext(), Quiz4Activity.class);
                         startActivity(intent4);
+                        finish();
                         break;
 
                     default:
                         Intent intentDef = new Intent(view.getContext(), Quiz1Activity.class);
                         startActivity(intentDef);
+                        finish();
                         break;
                 }
             }

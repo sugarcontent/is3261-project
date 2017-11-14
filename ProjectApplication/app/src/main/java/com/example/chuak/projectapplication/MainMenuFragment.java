@@ -26,6 +26,10 @@ public class MainMenuFragment extends Fragment {
     int[] sampleImages = {R.drawable.tutorial, R.drawable.quiz,
             R.drawable.notes};
 
+    int tutorial_num = 1;
+    int quiz_num = 2;
+    int notes_num = 3;
+
     public MainMenuFragment() {
         // Required empty public constructor
     }
@@ -59,7 +63,7 @@ public class MainMenuFragment extends Fragment {
                 TutorialFragment fragment = new TutorialFragment();
                 FragmentManager manager = getFragmentManager();
 
-                navigationView.getMenu().getItem(1).setChecked(true);
+                navigationView.getMenu().getItem(tutorial_num).setChecked(true);
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
                 transaction.replace(R.id.frameLayout, fragment).commit();
@@ -72,7 +76,7 @@ public class MainMenuFragment extends Fragment {
                 QuizMenuFragment fragment = new QuizMenuFragment();
                 FragmentManager manager = getFragmentManager();
 
-                navigationView.getMenu().getItem(2).setChecked(true);
+                navigationView.getMenu().getItem(quiz_num).setChecked(true);
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
                 transaction.replace(R.id.frameLayout, fragment).commit();
@@ -85,7 +89,7 @@ public class MainMenuFragment extends Fragment {
                 NotesFragment fragment = new NotesFragment();
                 FragmentManager manager = getFragmentManager();
 
-                navigationView.getMenu().getItem(3).setChecked(true);
+                navigationView.getMenu().getItem(notes_num).setChecked(true);
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
                 transaction.replace(R.id.frameLayout, fragment).commit();

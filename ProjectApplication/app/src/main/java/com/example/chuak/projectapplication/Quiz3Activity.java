@@ -51,6 +51,7 @@ public class Quiz3Activity extends Activity {
                 mQuestionLibrary.clearQuestion();
                 Intent i = new Intent(view.getContext(), MainMenuActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -97,6 +98,7 @@ public class Quiz3Activity extends Activity {
                             intent.putExtra("questions", maxNumOfQuestions);
                             intent.putExtra("score", mScore); // pass the current score to the second screen
                             startActivity(intent);
+                            finish();
                         }
                     }, 1500);
         }
